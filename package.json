@@ -1,13 +1,13 @@
 {
   "name": "light-currency-plugin-math",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Provide light-currency with a plugin for mathematical operations.",
   "author": "yerundong",
   "license": "MIT",
   "homepage": "https://github.com/yerundong/light-currency-plugin-math.git",
-  "main": "dist/standard/light-currency-plugin-math.cjs.js",
-  "module": "dist/standard/light-currency-plugin-math.es.js",
-  "browser": "dist/standard/light-currency-plugin-math.umd.js",
+  "main": "dist/light-currency-plugin-math.cjs.js",
+  "module": "dist/light-currency-plugin-math.es.js",
+  "browser": "dist/light-currency-plugin-math.umd.js",
   "scripts": {
     "rollup": "rollup --config config/rollup.config.js ",
     "babel": "npx babel src/light-currency-plugin-math.js -o src/light-currency-plugin-math.babel.js"
