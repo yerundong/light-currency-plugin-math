@@ -1,0 +1,45 @@
+{
+  "name": "light-currency-plugin-math",
+  "version": "1.0.1",
+  "description": "Provide light-currency with a plugin for mathematical operations.",
+  "author": "yerundong",
+  "license": "MIT",
+  "homepage": "https://github.com/yerundong/light-currency-plugin-math.git",
+  "main": "dist/standard/light-currency-plugin-math.cjs.js",
+  "module": "dist/standard/light-currency-plugin-math.es.js",
+  "browser": "dist/standard/light-currency-plugin-math.umd.js",
+  "scripts": {
+    "rollup": "rollup --config config/rollup.config.js ",
+    "babel": "npx babel src/light-currency-plugin-math.js -o src/light-currency-plugin-math.babel.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yerundong/light-currency-plugin-math.git"
+  },
+  "keywords": [
+    "math",
+    "currency",
+    "format",
+    "money",
+    "accounting",
+    "number",
+    "parse",
+    "precision",
+    "decimal"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "core-js": "^3.18.0",
+    "rollup": "^2.57.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-banner": "^0.2.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-uglify": "^6.0.4"
+  },
+  "dependencies": {
+    "decimal.js": "^10.3.1"
+  }
+}
