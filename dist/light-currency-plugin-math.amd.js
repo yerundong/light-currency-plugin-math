@@ -1,5 +1,5 @@
 /**
- * light-currency-plugin-math - v1.0.1
+ * light-currency-plugin-math - v1.0.4
  * https://github.com/yerundong/light-currency-plugin-math.git
  * 
  * Copyright (c) 2021 yerundong
@@ -35,6 +35,16 @@ define(['exports', 'decimal.js'], (function (exports, Decimal) { 'use strict';
 	var sum = function sum() {
 	  return Decimal__default["default"].sum.apply(Decimal__default["default"], arguments).valueOf();
 	};
+	/**
+	 * Rounding operation
+	 */
+
+	var toFixed = function toFixed(value, dp, rm) {
+	  return new Decimal__default["default"](value).toFixed(dp, rm).valueOf();
+	};
+	var toDP = function toDP(value, dp, rm) {
+	  return new Decimal__default["default"](value).toDP(dp, rm).valueOf();
+	};
 	var lightCurrencyPluginMath = [{
 	  name: 'add',
 	  handler: function handler(value) {
@@ -56,9 +66,14 @@ define(['exports', 'decimal.js'], (function (exports, Decimal) { 'use strict';
 	    return this.setValue(div(this.value, value).valueOf());
 	  }
 	}, {
-	  name: 'sum',
-	  handler: function handler(value) {
-	    return this.setValue(sum(this.value, value).valueOf());
+	  name: 'toFixed',
+	  handler: function handler(dp) {
+	    return this.setValue(toFixed(this.value, dp));
+	  }
+	}, {
+	  name: 'toDP',
+	  handler: function handler(dp) {
+	    return this.setValue(toDP(this.value, dp));
 	  }
 	}];
 
@@ -68,6 +83,8 @@ define(['exports', 'decimal.js'], (function (exports, Decimal) { 'use strict';
 	exports.mul = mul;
 	exports.sub = sub;
 	exports.sum = sum;
+	exports.toDP = toDP;
+	exports.toFixed = toFixed;
 
 	Object.defineProperty(exports, '__esModule', { value: true });
 

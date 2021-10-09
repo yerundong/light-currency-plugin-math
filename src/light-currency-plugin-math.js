@@ -9,6 +9,13 @@ export const mul = (...params) => Decimal.mul(...params).valueOf() // ×
 export const div = (...params) => Decimal.div(...params).valueOf() // ÷
 export const sum = (...params) => Decimal.sum(...params).valueOf()
 
+/**
+ * Rounding operation
+ */
+export const toFixed = (value, dp, rm) =>
+	new Decimal(value).toFixed(dp, rm).valueOf()
+export const toDP = (value, dp, rm) => new Decimal(value).toDP(dp, rm).valueOf()
+
 export default [
 	{
 		name: 'add',
@@ -35,9 +42,15 @@ export default [
 		},
 	},
 	{
-		name: 'sum',
-		handler(value) {
-			return this.setValue(sum(this.value, value).valueOf())
+		name: 'toFixed',
+		handler(dp) {
+			return this.setValue(toFixed(this.value, dp))
+		},
+	},
+	{
+		name: 'toDP',
+		handler(dp) {
+			return this.setValue(toDP(this.value, dp))
 		},
 	},
 ]
